@@ -122,4 +122,5 @@ func new_rund():
 func new_wave():
 	alternative.show_card()
 func _on_button_pressed() -> void:
-	get_tree().paused = true
+	print("upgrade")
+	#get_tree().paused = true
