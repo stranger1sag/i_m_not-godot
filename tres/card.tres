@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://crgsftmj54sgn"]
+
+[ext_resource type="Shader" path="res://shader/select_card.gdshader" id="1_m57ml"]
+[ext_resource type="Texture2D" uid="uid://dbpe0higiippn" path="res://assest/BHDIGGDFAJBEB-CunTkeefY6.png" id="2_ew47q"]
+
+[resource]
+shader = ExtResource("1_m57ml")
+shader_parameter/dissolve_threshold = 0.0
+shader_parameter/dissolve_color = Color(1, 0, 0, 1)
+shader_parameter/noise_texture = ExtResource("2_ew47q")

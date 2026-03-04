@@ -1,0 +1,167 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs0ockc6y6svw"]
+
+[ext_resource type="StyleBox" uid="uid://c3ufvqofbtead" path="res://tres/cloumn.tres" id="1_25dii"]
+[ext_resource type="Script" path="res://script/end.gd" id="1_rc05w"]
+[ext_resource type="Texture2D" uid="uid://ur22v6rlqx8k" path="res://assest/ims .png" id="2_e7qpe"]
+[ext_resource type="Texture2D" uid="uid://bnxcmevkrvcec" path="res://assest/03720d7809ba4ee8a76bceee1c71c85b (5).png" id="4_hdr5x"]
+[ext_resource type="FontFile" uid="uid://vy81r5hqht6y" path="res://font/shangshoufeichiti.ttf" id="5_5ikd1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk7ji"]
+atlas = ExtResource("4_hdr5x")
+region = Rect2(144, 88, 192, 104)
+
+[sub_resource type="Animation" id="Animation_sg2mq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(103, 230)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_bhk23"]
+resource_name = "move"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.5, 3.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(400, 0), Vector2(400, 600), Vector2(0, 600), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4, 5.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 6.28319, 0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_elosr"]
+_data = {
+"RESET": SubResource("Animation_sg2mq"),
+"move": SubResource("Animation_bhk23")
+}
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_rc05w")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(400, 600)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_25dii")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+visible = false
+position = Vector2(103, 230)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_e7qpe")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -52.0
+offset_top = -76.0
+offset_right = 44.0
+offset_bottom = 64.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_lk7ji")
+
+[node name="Label" type="Label" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -6.0
+offset_right = 160.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_5ikd1")
+theme_override_font_sizes/font_size = 50
+text = "WIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Button2" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5ikd1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("1_25dii")
+text = "继续游戏"
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_5ikd1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("1_25dii")
+text = "退出"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_elosr")
+}
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Button" to="." method="button_pressed"]

@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7ax6ye613p24"]
+
+[ext_resource type="Script" path="res://script/main.gd" id="1_7jhcm"]
+[ext_resource type="Texture2D" uid="uid://dx8kpgsfu00vj" path="res://assest/背景.png" id="1_qwjjh"]
+[ext_resource type="Texture2D" uid="uid://dwq24e8274qfd" path="res://assest/res_ui.png" id="3_jy4pp"]
+[ext_resource type="PackedScene" uid="uid://djd2br2kg8vwo" path="res://screen/alternative.tscn" id="4_tyuvd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0uel"]
+atlas = ExtResource("3_jy4pp")
+region = Rect2(346, 509, 103, 39)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_axere"]
+texture = SubResource("AtlasTexture_i0uel")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47i4x"]
+atlas = ExtResource("3_jy4pp")
+region = Rect2(346, 509, 103, 39)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v7bu3"]
+texture = SubResource("AtlasTexture_47i4x")
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_7jhcm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 1056.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qwjjh")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 261.0
+offset_right = 298.0
+offset_bottom = 344.0
+scale = Vector2(0.3, 0.3)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 60
+text = "波次 1/7"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 231.0
+offset_top = 990.0
+offset_right = 393.0
+offset_bottom = 1035.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_axere")
+theme_override_styles/hover = SubResource("StyleBoxTexture_axere")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_axere")
+theme_override_styles/normal = SubResource("StyleBoxTexture_v7bu3")
+text = "升级"
+
+[node name="player" type="Node2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="player"]
+position = Vector2(90, 610)
+
+[node name="Marker2D4" type="Marker2D" parent="player"]
+position = Vector2(90, 450)
+
+[node name="Marker2D3" type="Marker2D" parent="player"]
+position = Vector2(90, 770)
+
+[node name="Marker2D" type="Marker2D" parent="player"]
+position = Vector2(180, 530)
+
+[node name="Marker2D5" type="Marker2D" parent="player"]
+position = Vector2(180, 690)
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="enemies"]
+position = Vector2(520, 610)
+
+[node name="Marker2D4" type="Marker2D" parent="enemies"]
+position = Vector2(520, 445)
+
+[node name="Marker2D5" type="Marker2D" parent="enemies"]
+position = Vector2(520, 771)
+
+[node name="Marker2D" type="Marker2D" parent="enemies"]
+position = Vector2(430, 530)
+
+[node name="Marker2D3" type="Marker2D" parent="enemies"]
+position = Vector2(430, 690)
+
+[node name="alternative" parent="." instance=ExtResource("4_tyuvd")]
+process_mode = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

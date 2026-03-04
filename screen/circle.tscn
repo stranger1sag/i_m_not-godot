@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3agpur6cfh1a"]
+
+[ext_resource type="Texture2D" uid="uid://de3mo3ht5emyb" path="res://assest/circle.png" id="1_hkokq"]
+[ext_resource type="Script" path="res://script/Circle.gd" id="2_c7mio"]
+[ext_resource type="Texture2D" uid="uid://2b8haxd6ve6x" path="res://assest/background.jpg" id="3_yuynm"]
+
+[sub_resource type="Gradient" id="Gradient_pets3"]
+offsets = PackedFloat32Array(0, 0.073913)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mlf6g"]
+gradient = SubResource("Gradient_pets3")
+
+[sub_resource type="Curve" id="Curve_5234q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oseii"]
+curve = SubResource("Curve_5234q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7y3o8"]
+particle_flag_disable_z = true
+angular_velocity_min = 180.0
+angular_velocity_max = 180.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.1
+scale_curve = SubResource("CurveTexture_oseii")
+color_ramp = SubResource("GradientTexture1D_mlf6g")
+
+[node name="Circle" type="Sprite2D"]
+modulate = Color(1, 0.498039, 0, 1)
+position = Vector2(3.55271e-15, -5.96046e-08)
+scale = Vector2(2.95, 3)
+texture = ExtResource("1_hkokq")
+script = ExtResource("2_c7mio")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_7y3o8")
+texture = ExtResource("3_yuynm")
+lifetime = 0.3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,20 @@
+{
+	"普通":{"max_hp":100,
+	"max_hp_up":{"layer":320,"wave":40},
+	"attack":50,
+	"attack_up":{"layer":16,"wave":2},
+	"weakness":0
+	},
+	"精英":{"max_hp":200,
+	"max_hp_up":{"layer":480,"wave":60},
+	"attack":70,
+	"attack_up":{"layer":24,"wave":3},
+	"weakness":0
+	},
+	"Boss":{"max_hp":1000,
+	"max_hp_up":{"layer":1000,"wave":0},
+	"attack":150,
+	"attack_up":{"layer":30,"wave":0},
+	"weakness":0
+	},
+}

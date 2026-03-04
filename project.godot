@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="咸鱼之王"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://assest/icon.svg"
+
+[autoload]
+
+ReadLoad="*res://script/special/read_load.gd"
+Manager="*res://script/special/manager.gd"
+ChangeScene="*res://screen/change_scene.tscn"
+
+[display]
+
+window/size/viewport_width=600
+window/size/viewport_height=1056
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="咸鱼之王"
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(258, 40),"global_position":Vector2(264, 102),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+click_right={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(318, 23),"global_position":Vector2(324, 85),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"

@@ -1,0 +1,715 @@
+[gd_scene load_steps=24 format=3 uid="uid://c5anomjvdhxm1"]
+
+[ext_resource type="Script" path="res://script/select.gd" id="1_0wbh2"]
+[ext_resource type="Texture2D" uid="uid://dwq24e8274qfd" path="res://assest/res_ui.png" id="2_uflas"]
+[ext_resource type="StyleBox" uid="uid://c3ufvqofbtead" path="res://tres/cloumn.tres" id="3_e21cp"]
+[ext_resource type="Texture2D" uid="uid://b0kkythh3eenh" path="res://assest/ims.png" id="3_jlmbt"]
+[ext_resource type="Theme" uid="uid://ourmplinx7yc" path="res://tres/select.tres" id="3_tcbf4"]
+[ext_resource type="Texture2D" uid="uid://x3c4idonpe1" path="res://assest/03720d7809ba4ee8a76bceee1c71c85b (2).png" id="5_7pfwp"]
+[ext_resource type="Texture2D" uid="uid://dtvtbfpv33vnu" path="res://assest/03720d7809ba4ee8a76bceee1c71c85b (3).png" id="7_n8dro"]
+[ext_resource type="FontFile" uid="uid://vy81r5hqht6y" path="res://font/shangshoufeichiti.ttf" id="8_wjdrx"]
+[ext_resource type="AudioStream" uid="uid://b3prjwhcwpo3w" path="res://assest/voice/制片帮素材_279147_木头敲击声.mp3" id="9_7g2bk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqkbr"]
+texture = ExtResource("5_7pfwp")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="FontFile" id="FontFile_kdgry"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3qtd"]
+atlas = ExtResource("3_jlmbt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13lnh"]
+atlas = ExtResource("7_n8dro")
+region = Rect2(376, 376, 104, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3teet"]
+atlas = ExtResource("7_n8dro")
+region = Rect2(8, 440, 272, 184)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uuqgt"]
+texture = ExtResource("5_7pfwp")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="Animation" id="Animation_3isa6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TextureRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/TextureRect2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer2/TextureRect3:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer2/TextureRect3:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qjwlb"]
+resource_name = "show"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TextureRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/TextureRect2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_avou0"]
+resource_name = "show_1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/TextureRect3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/TextureRect3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_700cd"]
+_data = {
+"RESET": SubResource("Animation_3isa6"),
+"show": SubResource("Animation_qjwlb"),
+"show_1": SubResource("Animation_avou0")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l62h"]
+atlas = ExtResource("2_uflas")
+region = Rect2(804, 803, 23, 21)
+
+[sub_resource type="Animation" id="Animation_x613g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/TextureRect3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/TextureRect3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rqhif"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer2/TextureRect3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer2/TextureRect3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hkaeh"]
+_data = {
+"RESET": SubResource("Animation_x613g"),
+"show": SubResource("Animation_rqhif")
+}
+
+[node name="select" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 50
+script = ExtResource("1_0wbh2")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("3_e21cp")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(0, 300)
+offset_left = 60.0
+offset_top = 198.0
+offset_right = 520.0
+offset_bottom = 518.0
+theme_override_styles/panel = ExtResource("3_e21cp")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 61.0
+offset_top = 53.0
+offset_right = 551.0
+offset_bottom = 189.0
+theme_override_styles/panel = ExtResource("3_e21cp")
+
+[node name="Label5" type="Panel" parent="CanvasLayer"]
+offset_left = 76.0
+offset_top = 974.0
+offset_right = 304.0
+offset_bottom = 1028.0
+theme_override_styles/panel = ExtResource("3_e21cp")
+
+[node name="Label6" type="Panel" parent="CanvasLayer"]
+offset_left = 305.0
+offset_top = 975.0
+offset_right = 533.0
+offset_bottom = 1029.0
+theme_override_styles/panel = ExtResource("3_e21cp")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="HScrollBar" type="ScrollContainer" parent="HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="list" type="HBoxContainer" parent="HBoxContainer/MarginContainer2/HScrollBar"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="BoxContainer" type="GridContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_sqkbr")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="gridContainer" type="GridContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "角色名称:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="hp" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "血量:"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="attack" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "攻击力:"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="crit" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "暴击力:"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="crit_multiplier" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "暴击倍率:"
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="multiplier_power" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "增伤倍率:"
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="damage_reduction" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 0.815686, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+text = "减伤:"
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "技能名称:"
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = SubResource("FontFile_kdgry")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+
+[node name="GridContainer2" type="GridContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "被动:"
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+horizontal_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = SubResource("FontFile_kdgry")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "契约
+"
+
+[node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "开战"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Label3" type="Panel" parent="CanvasLayer2"]
+offset_left = 529.0
+offset_top = 33.0
+offset_right = 584.0
+offset_bottom = 197.0
+theme_override_styles/panel = ExtResource("3_e21cp")
+
+[node name="Button" type="Button" parent="CanvasLayer2"]
+offset_left = 529.0
+offset_top = 33.0
+offset_right = 582.0
+offset_bottom = 197.0
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "三
+人
+模
+式"
+text_overrun_behavior = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2"]
+visible = false
+offset_left = 332.0
+offset_top = 671.0
+offset_right = 537.0
+offset_bottom = 867.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("3_tcbf4")
+texture = SubResource("AtlasTexture_i3qtd")
+
+[node name="Label" type="Label" parent="CanvasLayer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 710.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer2"]
+modulate = Color(1, 1, 1, 0.839216)
+offset_left = 506.704
+offset_top = 153.0
+offset_right = 610.704
+offset_bottom = 353.0
+rotation = 0.364774
+scale = Vector2(0.375, 0.5)
+texture = SubResource("AtlasTexture_13lnh")
+flip_v = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2"]
+modulate = Color(1, 1, 1, 0.839216)
+offset_left = 521.704
+offset_top = 141.0
+offset_right = 793.704
+offset_bottom = 325.0
+rotation = 1.13446
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_3teet")
+
+[node name="TextureRect4" type="Panel" parent="CanvasLayer2"]
+offset_left = 17.0
+offset_top = 33.0
+offset_right = 81.0
+offset_bottom = 210.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_uuqgt")
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+offset_left = 23.0
+offset_top = 52.0
+offset_right = 75.0
+offset_bottom = 191.0
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(26, 69)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_wjdrx")
+theme_override_font_sizes/font_size = 60
+text = "队
+伍"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer2"]
+libraries = {
+"": SubResource("AnimationLibrary_700cd")
+}
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2/AnimationPlayer"]
+visible = false
+offset_left = 500.0
+offset_top = 100.0
+offset_right = 540.0
+offset_bottom = 140.0
+pivot_offset = Vector2(20, 20)
+texture = SubResource("AtlasTexture_5l62h")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="CanvasLayer2"]
+libraries = {
+"": SubResource("AnimationLibrary_hkaeh")
+}
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer2/AnimationPlayer2"]
+visible = false
+offset_left = 60.0
+offset_top = 100.0
+offset_right = 100.0
+offset_bottom = 140.0
+pivot_offset = Vector2(20, 20)
+texture = SubResource("AtlasTexture_5l62h")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="font" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_7g2bk")
+volume_db = -10.0
+
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer2/Button" to="." method="_button_pressed"]

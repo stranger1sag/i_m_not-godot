@@ -1,0 +1,249 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5anomjvdhxm1"]
+
+[ext_resource type="Script" path="res://script/select.gd" id="1_0wbh2"]
+[ext_resource type="Texture2D" uid="uid://bvfbrrqwhlphw" path="res://assest/单紫.png" id="2_4cben"]
+[ext_resource type="Theme" uid="uid://ourmplinx7yc" path="res://select.tres" id="3_tcbf4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7t6gn"]
+bg_color = Color(0.401968, 0.401968, 0.401968, 1)
+
+[sub_resource type="FontFile" id="FontFile_kdgry"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+
+[node name="select" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 100
+script = ExtResource("1_0wbh2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.190762, 0.190762, 0.190762, 1)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BoxContainer" type="GridContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/ScrollContainer/BoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_4cben")
+metadata/xaiol = ""
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7t6gn")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="gridContainer" type="GridContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="name" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "角色名称:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "xxx"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="hp" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "血量:"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "xxx"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="attack" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "攻击力:"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "xxx"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="crit" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "暴击力:"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "xxx"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="crit_multiplier" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "暴击倍率:"
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "xxx"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="multiplier_power" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "增伤倍率:"
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "xxx"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="damage_reduction" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "减伤:"
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/gridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+text = "xxx"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "技能名称:"
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_tcbf4")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+horizontal_alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = SubResource("FontFile_kdgry")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "选择"
+
+[node name="Button2" type="Button" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
+text = "开战"
