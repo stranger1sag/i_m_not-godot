@@ -49,13 +49,16 @@ git 克隆 https://github.com/stranger1sag/i_m_not-godot.git
 
 点击“运行”开始游戏
 
-## 🖼️ 游戏截图
-
-### 角色详情界面
-![角色详情界面](screenshots/2.png)
-
-### 战斗界面
-![战斗界面](screenshots/1.png)
+<table>
+  <tr>
+    <td><img src="screenshots/2.png" width="300"/></td>
+    <td><img src="screenshots/1.png" width="300"/></td>
+  </tr>
+  <tr>
+    <td align="center">角色详情界面</td>
+    <td align="center">战斗场景</td>
+  </tr>
+</table>
 
 📦 项目结构
 文本
