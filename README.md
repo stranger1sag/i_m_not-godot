@@ -1,7 +1,5 @@
 我不是戈多
-https://img.shields.io/badge/Godot-4.0%252B-478CBF?logo=godot-engine&logoColor=white
-https://img.shields.io/badge/license-MIT-green
-https://img.shields.io/badge/platform-Windows%2520%257C%2520macOS%2520%257C%2520Linux-lightgrey
+![Godot](https://img.shields.io/badge/Godot-4.0%252B-478CBF?logo=godot-engine&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-green) ![Platform](https://img.shields.io/badge/platform-Windows%2520%257C%2520macOS%2520%257C%2520Linux-lightgrey)
 
 我不是戈多是一款受《咸鱼之王》启发的爬塔回合制自走棋游戏。收集、培养各种搞怪的戈多头像角色，组建你的最强阵容，挂机爬塔，挑战不断变强的敌人！
 
